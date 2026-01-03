@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: authcraft-postgres
+    environment:
+      POSTGRES_DB: oauth_idp
+      POSTGRES_USER: oauth_user
+      POSTGRES_PASSWORD: oauth_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - oauth-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: authcraft-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - oauth-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  oauth-network:
+    driver: bridge
