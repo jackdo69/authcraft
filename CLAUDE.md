@@ -95,6 +95,32 @@ When helping with this project:
 - **Build incrementally** - Follow the phase structure, don't skip ahead
 - **Test frequently** - Encourage testing after each implementation step
 
+### Learning Notes Workflow
+
+When the user is studying/learning/practicing a guide and asks questions:
+
+1. **After explaining concepts**, check if the information is already in the guide
+2. **Only add to notes if the information is NOT in the guide** - Don't duplicate guide content
+3. **Ask the user**: "Would you like me to add this information to your notes file?"
+4. **Notes file location**: `/notes/` folder (same level as `/guides/`)
+5. **Naming convention**: `{guide-number}-notes.md` (e.g., `03-notes.md`, `10-notes.md`, `25-notes.md`)
+
+**Content to include in notes** (only if NOT already in the guide):
+   - Additional explanations of concepts the user needed clarification on
+   - Deeper breakdowns of code/concepts beyond what the guide provides
+   - "Why" explanations for architectural decisions not covered in the guide
+   - Common pitfalls and solutions the user encountered
+   - Comparisons to TypeScript/JavaScript when relevant (user's background)
+   - Additional context, examples, or troubleshooting steps
+   - Setup instructions (e.g., IDE configuration, tooling setup)
+
+**Do NOT include**:
+   - Information already present in the guide
+   - Verbatim copies of guide sections
+   - Redundant explanations
+
+**Example**: If working on Guide 10 and user asks about JWT token validation, check if the guide already explains it. If yes, don't duplicate. If the user needs a deeper explanation or encounters issues not covered in the guide, offer to add that supplementary information to `/notes/10-notes.md`
+
 ## Current Project Status (Updated: 2025-12-28)
 
 ### Guides Completion Status
